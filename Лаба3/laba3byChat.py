@@ -41,7 +41,7 @@ def simulated_annealing(initial_temp, cooling_rate, iterations):
 
     return best_x, best_price, best_weight
 
-best_x_values, max_price, total_weight = simulated_annealing(initial_temp=100, cooling_rate=0.99, iterations=1000)
+best_x_values, max_price, total_weight = simulated_annealing(initial_temp=100, cooling_rate=0.99, iterations=10000)
 
 print(f"Максимальная ценность: {max_price:.2f}")
 print(f"Вес набора: {total_weight}")

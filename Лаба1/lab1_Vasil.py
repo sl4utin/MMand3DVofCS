@@ -61,13 +61,14 @@ def get_new_point(point, step, prev_func_value):
 
 def func(x1, x2, x3):
     # return (x1 - 15) ** 2 + (x2 - 3) ** 2# + x3
-    return (x1 - 15) ** 2 + (x2 - 3) ** 2 + x3
+    return 2 * math.pow(x1, 2) + 2 * x1 + 4 * x2 - 3 * x3
+    # return (x1 - 15) ** 2 + (x2 - 3) ** 2 + x3
 
 x_min = 0
 x_max = 10
 STEP = 0.001
 N = 100
-M = 600000
+M = 100000
 
 def main():
     global M, STEP
@@ -85,8 +86,8 @@ def main():
             prev_point = point
             point = get_new_point(point, STEP, point.get_func_value())
             print(f'Промежуточная точка №{try_number}, {i}: {point}, её значение: {point.get_func_value()}')
-            if point == prev_point:
-                break
+            # if point == prev_point:
+            #     break
         result_points.append(point)
         print(f'Конечная точка №{try_number}: {point}, её значение: {point.get_func_value()}')
         print()
